@@ -1,0 +1,628 @@
+/*
+button shadows:
+x: 0px
+y: 3px
+blur: 15px
+color: rgba(40, 167, 69, 0.42);
+
+Gray drop shadow:
+x: 0px
+y: 3px
+blur: 20px
+color: rgb(0 0 0 / 16%);
+
+. The smallest supported version should be 320px
+and maximum widt should be 1140px.
+1200 - 30 - 30 = 1140;
+*/
+
+/*--------- initializing CSS -----------*/
+:root {
+  --ff-header: Poppins;
+  --ff-global: Nunito;
+
+  --clr-primary: #28a745;
+  --clr-primary-hover: #178430;
+  --clr-bar: rgba(40, 167, 69, 0.25);
+  --clr-dark: #212629;
+  --clr-light: #8d9199;
+  --clr-black: #000;
+  --clr-white: #fff;
+
+  --sdw-primary: rgba(40, 167, 69, 0.42);
+  --sdw-grey: rgb(0, 0, 0, 16%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font-family: var(--ff-global), sans-serif;
+  color: var(--clr-dark);
+  transition: all 0.5s ease-in-out;
+}
+
+/*------- Typography ---------*/
+h1,
+h2,
+h3 {
+  font-family: var(--ff-header);
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 36px;
+  font-weight: 500;
+  padding: 2px;
+}
+
+p {
+  font-size: 13px;
+  line-height: 22px;
+}
+
+/*-------- general ---------*/
+.container {
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-dark);
+}
+
+a:visited {
+  color: var(--clr-dark);
+}
+
+a:active {
+  color: var(--clr-primary);
+}
+
+a:hover {
+  color: var(--clr-primary-hover);
+}
+
+a.button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px var(--sdw-primary);
+}
+
+a.button-green {
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+}
+
+a.button-white {
+  background-color: var(--clr-white);
+  color: var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+}
+
+
+/*-------- aside ---------*/
+.donation h2 {
+  font-size: 20px;
+  position: relative;
+  top: 14px;
+}
+
+.donation li>p {
+  display: inline-block;
+  margin: 0px 4px;
+}
+
+
+
+/*-------- cards ---------*/
+
+.card {
+  padding: 0 20px;
+}
+
+
+/*--------------------*/
+.border {
+  border-top: 1px solid #a19f9f;
+}
+
+.progress-bar1 {
+  width: 100%;
+  height: 15px;
+  background: #9cbab4;
+  border-radius: 5px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #9cbab4;
+  border-radius: 5px;
+}
+
+.progress-fill-1 {
+  width: 100%;
+  height: 100%;
+  background: var(--clr-primary);
+}
+
+.progress-fill-2 {
+  width: 77%;
+  height: 100%;
+  background: var(--clr-primary);
+}
+
+.progress-fill-3 {
+  width: 51%;
+  height: 100%;
+  background: var(--clr-primary);
+}
+
+.progress-fill-4 {
+  width: 6%;
+  height: 100%;
+  background: var(--clr-primary);
+}
+
+.days {
+  color: var(--clr-light);
+  margin-right: 60%;
+}
+
+.icon {
+  padding: 2px;
+}
+
+.progress-fill {
+  width: 20%;
+  height: 100%;
+  background: var(--clr-primary);
+}
+
+/*-------- utilities ---------*/
+.flex-row {
+  display: flex;
+  /* flex-direction: row; [This is Default]*/
+}
+
+.flex-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-col-reverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.flex-jc-center {
+  justify-content: center;
+}
+
+.flex-jc-between {
+  justify-content: space-between;
+}
+
+.flex-ai-center {
+  align-items: center;
+}
+
+.flex-ai-baseline {
+  align-items: baseline;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.col-1 {
+  flex: 0 1 auto;
+  width: 8.333333333%;
+}
+
+.col-3 {
+  flex: 0 1 auto;
+  width: 20%;
+}
+
+.col-4 {
+  flex: 0 1 auto;
+  width: 33.3333333%;
+}
+
+.col-8 {
+  flex: 0 1 auto;
+  width: 66.6666666666%;
+}
+
+.col-12 {
+  flex: 0 1 calc(100% - 30px);
+  /*calc(100% - 30px)*/
+  width: 100%;
+}
+.aside{
+  flex-direction: column;
+}
+
+/*-------------*/
+header nav li {
+  margin: 0 15px;
+}
+
+
+
+.hide {
+  display: none;
+}
+
+.slider {
+  margin: 0px 5px;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.trend {
+  margin-top: 70px;
+}
+
+.larm {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 100%;
+}
+
+.space {
+  margin-top: 10%;
+}
+
+
+
+.nav-bar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  right: 0;
+  bottom: 3px;
+}
+
+.nav-bar li {
+  margin: 12px 0;
+  padding: 12px;
+}
+
+.campaigns {
+  height: 208px;
+  background: url(./images/campaign-banner.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container-fluid {
+  width: 100%;
+}
+
+.campaigns h1 {
+  text-align: center;
+  color: white;
+  margin: 32px 0 16px 0;
+}
+
+.breadcrumb {
+  margin: 0 auto;
+}
+
+.breadcrumb ul li {
+  text-align: center;
+  color: white;
+}
+
+.breadcrumb ul li.active {
+  color: var(--clr-primary);
+}
+
+.breadcrumb ul li:nth-child(2)::before {
+  content: ">>";
+  margin-right: 5px;
+  color: white;
+}
+
+footer {
+  padding: 30px;
+  margin-top: 11px;
+}
+/*Inaro man ezaf kardam :)))*/
+.flacher {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
+ .flacher ul li {
+  padding: 2px 7px 5px;
+  border: 1px solid var(--clr-primary);
+  border-radius: 20px;
+  color: var(--clr-primary);
+  box-shadow: 0 0 2px 2px var(--sdw-primary-hvr);
+}
+.flacher-explore{
+  position: relative;
+  right: 0;
+  left: 0;
+}
+.a-btn-grn {
+  display: flex;
+  width: 53%;
+  margin: 0 auto;
+}
+.span-font-size{
+  font-size: 20px;
+  margin: 5px;
+}
+.donation {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 0px 40px -2px #ccc;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.donation-ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  /* padding: 4px; */
+}
+.donation-ul-li {
+  padding: 0 2px;
+}
+
+.donation-h2 {
+  margin: 15px 0px;
+}
+ul.card-ul {
+  display: flex;
+  margin-top: 25px;
+  justify-content: flex-start;
+  /* align-items: center; */
+  padding: 15px;
+}
+li.card-ul-li {
+  margin: 0px 5px;
+}
+
+.donation-ul-li {
+  padding: 10% 0px;
+}
+
+
+@media (max-width: 500px) {
+  .col-1,
+  .col-3,
+  .col-4,
+  .col-8 {
+    width: 100%;
+  }
+
+
+  header {
+    z-index: 999;
+    position: fixed;
+    background: white;
+    width: 100%;
+  }
+
+  header img {
+    padding-block: 1.2vh;
+    margin: 0 auto;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  .campaigns {
+    position: relative;
+    top: 5vh;
+  }
+
+  .main-content>div {
+    flex-direction: column;
+  }
+
+  .main-content aside {
+    max-width: 75%;
+    margin: 0 auto;
+    margin-block: 15px;
+    text-align: center;
+  }
+
+  .main-content aside h2 {
+    font-size: 25px;
+    line-height: 3;
+  }
+
+  .main-content .box {
+    max-width: 75%;
+    margin: 0 auto;
+    margin-block: 15px;
+  }
+
+  .donation li:last-child {
+    text-align: left;
+    width: 330px;
+  }
+
+  footer > div {
+  flex-direction: column;
+  }
+
+  footer .footer-menu {
+  flex-direction: column;
+  align-items: center;
+  }
+
+  footer .footer-menu > * {
+    margin-block: 15px;
+  }
+
+  .social-media {
+    margin: 0 auto;
+  }
+  .a-btn-grn{
+    width: 35%;
+  }
+  .card{
+    padding: 0px 40px;
+  }
+  .donation-ul-li {
+    padding: 4% 50px;
+}
+.trend {
+  margin-top: 15px;
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 55px;
+  height: 44px;
+  padding: 10px 0px;
+  background-color: #28a745;
+  border: solid 2px #c8821b;
+  position: relative;
+  border-radius: 5px;
+}
+
+.hamburger-menu span {
+  border-bottom: white 2px solid;
+  width: 30px;
+  display: block;
+  margin: 0 auto;
+}
+.hide{
+  display: none;
+}
+}
+
+
+@media (min-width: 540px) and (max-width:769px) {
+
+.box{
+
+  width:30%;
+}
+  .col-3 {
+    flex: 0 1 auto;
+  }
+  .card{
+    padding: 0px 10px;
+    font-size: 12px;
+  }
+  li.card-ul-li {
+    margin: 0px 2px;
+}
+h2{
+  font-size: 25px;
+}
+.a-btn-grn{
+  width: 70%;
+  text-align: center;
+}
+.donation{
+  width: 25%;
+}
+.donation-h2{
+  font-size: 15px;
+}
+.donation-ul {
+  margin-top: 0%;
+  padding: 3px;
+}
+.donation-ul-li {
+  padding: 0% 10px;
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 55px;
+  height: 44px;
+  padding: 10px 0px;
+  background-color: #28a745;
+  border: solid 2px #c8821b;
+  position: relative;
+  border-radius: 5px;
+}
+
+.hamburger-menu span {
+  border-bottom: white 2px solid;
+  width: 30px;
+  display: block;
+  margin: 0 auto;
+}
+.hide{
+  display: none;
+}
+.last{
+  position:relative;
+  margin: 0 auto;
+}
+.last1{
+  position: abosolute;
+  /* bottom: 50%; */
+  /* top: 7%; */
+  position: absolute;
+  /* bottom: 78%; */
+  top: 110%;
+  right: 4%;
+}
+}
+
+
+
+
+
+@media (min-width: 1026px) and (max-width: 1200px) {
+  .donation ul li {
+    padding: 8% 0px;
+  }
+
+  .row-terzo{
+display: none;
+
+  }
+}
